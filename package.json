@@ -1,0 +1,12 @@
+{
+  "name": "Express-JSON-api",
+  "dependencies": {
+    "express": "3.0.x",
+    "mongoose": "3.4.0",
+    "ejs": "~0.8.4"
+  },
+  "engines": {
+    "node": "v0.8.x"
+  },
+  "version": "0.0.0-1"
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app='thingModule'>
+  <head>
+    <meta charset="utf-8"/>
+	
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js">
+  </script>
+  <script type="text/javascript" src="/controllers/controllers.js">
+  </script>
+  <link rel="stylesheet" href="/css/base.css">
+  <title>
+    Angular + Express API
+  </title>
+  </head>
+  <body>
+    <div ng-controller="thingController">
+      <div>
+        <div class="header">
+          <h2>
+            Angular + Express JSON API + MongoDB 
+          </h2>
+          <form ng-submit="addThing()">
+            <div>
+              <input class="edit" placeholder="New thing" name="name" ng-model="newthing">
+            </div>
+            
+          </form>
+        </div>
+        
+        <ul id="todo-list">
+          <li ng-repeat="thing in things" ng-class="{editing: thing == editThingy}">
+            <div class="view">
+              <label ng-dblclick="editThing(thing)">
+                {{thing.name}}
+              </label>
+              <span>
+                <button ng-click="removeThing(thing)">
+                  [x]
+                </button>
+              </span>
+            </div>
+            
+            <form ng-submit="doneEditing(thing)">
+              <input class="edit" ng-model="thing.name">
+			</form>
+      </li>
+  </ul>
+  </div>
+  </body>
+  </html>
