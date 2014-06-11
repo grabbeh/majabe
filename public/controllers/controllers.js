@@ -2,14 +2,12 @@ var thingModule = angular.module('thingModule', []);
 
 thingModule.factory('ThingGetter', ['$http',
     function ($http) {
-
         return {
             get: function (callback) {
                 $http.get('/things').success(function (data, status, headers, config) {
                     callback(data)
                 })
             }
-
         }
     }
 ])
